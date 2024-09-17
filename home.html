@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon stock price</title>
+</head>
+<body>
+    <h2>Enter Amazon stock price for Prediction</h2>
+    <form action="/predict" method="POST">
+        <label>Date:</label>
+        <input type="text" name="Date" placeholder="e.g., 2024-09-09"><br>
+        <label>Open:</label>
+        <input type="number" step="any" name="Open" placeholder="e.g., 100.5"><br>
+        <label>High:</label>
+        <input type="number" step="any" name="High" placeholder="e.g., 110.5"><br>
+        <label>Low:</label>
+        <input type="number" step="any" name="Low" placeholder="e.g., 90.5"><br>
+        <label>Close:</label>
+        <input type="number" step="any" name="Close" placeholder="e.g., 105.5"><br>
+        <label>Adj Close:</label>
+        <input type="number" step="any" name="Adj Close" placeholder="e.g., 105.5"><br>
+        <label>Volume:</label>
+        <input type="number" step="any" name="Volume" placeholder="e.g., 15000"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Prediction Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
+
